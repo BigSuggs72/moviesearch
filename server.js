@@ -32,11 +32,11 @@ app.use(cors())
 
 
 //CRUD  METHODS - 1:22:00
-app.get('/search', async (req, res) => {
+app.get('/search', async (request, response) => {
     try{
         let result = await collection.aggregate([
             {
-                "$Search" : {
+                "$search" : {
                     "autocomplete" : {
                         "query": `${request.query.query}`,
                         "path": "title",
@@ -55,10 +55,10 @@ app.get('/search', async (req, res) => {
 })
 
 
-app.get('/get/:id', async (req, res) => {
+app.get('/get/:id', async (request, response) => {
     try {
         let result = await collection.findOne({
-            "_id" : ObjectId(req.params.id)
+            "_id" : ObjectId(request.params.id)
         })
         response.send(result)
     } catch (error) {

@@ -1,6 +1,6 @@
 $(document).ready(function (){  //2:15:00
     $('#title').autocomplete({
-        source: async function(req, res) {
+        source: async function(request, response) {
             let data = await fetch(`http://localhost:8000/search?query=${request.term}`)
                     .then(results => results.json())
                     .then(results => results.map(result => {
@@ -24,7 +24,7 @@ $(document).ready(function (){  //2:15:00
                             $("#cast").append(`<li>${cast}</li>`) 
                         })
                         $('img').attr('src',result.poster)
-                })
+            })
         }
     })
 })
