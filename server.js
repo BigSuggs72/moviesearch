@@ -1,4 +1,4 @@
-//MayanWolfe VOD at 3:00 pm on 6/19/2022: Let's Make an Auto-Completing Movie Finder App #100Devs
+//MayanWolfe VOD at 3:00 pm on 6/19/2022: Let's Make an Auto-Completing Movie Finder App #100Devs (query a database)
 
 const express = require('express')
 const app = express()
@@ -65,15 +65,6 @@ app.get('/get/:id', async (request, response) => {
         response.status(500).send({message: error.message})
     }
 })
-
-
-
-
-
-
-
-
-
 
 //SET UP LOCALHOST ON PORT
 app.listen(process.env.port || PORT, () => {
