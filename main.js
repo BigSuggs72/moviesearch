@@ -1,6 +1,4 @@
-const { response } = require("express") //2:15:00
-
-$(document).ready(function (){
+$(document).ready(function (){  //2:15:00
     $('#title').autocomplete({
         source: async function(req, res) {
             let data = await fetch(`http://localhost:8000/search?query=${request.term}`)
