@@ -5,7 +5,6 @@ const app = express()
 const cors = require('cors')
 const {MongoClient, ObjectId } = require('mongodb')
 require('dotenv').config()
-const PORT = 8000
 
 
 //DECLARED DB VARIABLES(Hide credentials)
@@ -67,7 +66,7 @@ app.get('/get/:id', async (request, response) => {
 })
 
 //SET UP LOCALHOST ON PORT
-app.listen(process.env.port || PORT, () => {
-    console.log(`The moviesearch server is active on port ${PORT}!!!`)
+app.listen(process.env.port || port, () => {
+    console.log('The server is active!!!')
 })
 
